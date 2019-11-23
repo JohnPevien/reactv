@@ -1,0 +1,18 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-unused-vars": "warn",
+    "no-console": "warn",
+    "func-names": "off",
+    "react/state-in-constructor": [0, {}],
+    "react/no-access-state-in-setstate": [0, {}],
+    "react/destructuring-assignment": [0, "never"]
+  },
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint"
+}
