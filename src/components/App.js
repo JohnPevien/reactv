@@ -1,10 +1,11 @@
 import React from 'react'
+import Layout from './Layout'
 
 function App() {
   return (
-    <div className="App">
+    <Layout>
       <header className="App-header">App page</header>
-    </div>
+    </Layout>
   )
 }
 

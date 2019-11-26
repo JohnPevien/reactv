@@ -1,8 +1,9 @@
 import React from 'react'
-import { Layout, Menu, Icon } from 'antd'
+import { Layout, Menu } from 'antd'
 import PropTypes from 'prop-types'
+import './layout.module.css'
 
-const { Header, Sider, Content } = Layout
+const { Header, Content, Footer } = Layout
 
 class AppLayout extends React.Component {
   state = { collapsed: false }
@@ -15,43 +16,45 @@ class AppLayout extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-          <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
-              <Icon type="user" />
-              <span>nav 1</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span>nav 2</span>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="upload" />
-              <span>nav 3</span>
-            </Menu.Item>
+      <Layout className="layout" style={{ minHeight: '100vh' }}>
+        <Header
+          style={{
+            backgroundColor: '#fff',
+            zIndex: 1,
+            position: 'fixed',
+            width: '100%',
+            display: 'flex',
+            boxShadow: '0px 5px 11px -5px rgba(0,0,0,0.72)',
+          }}
+        >
+          <h1 style={{ flexGrow: 1 }}>ReacTv</h1>
+
+          <Menu
+            mode="horizontal"
+            defaultSelectedKeys={['1']}
+            style={{ lineHeight: '61px' }}
+          >
+            <Menu.Item key="1">nav 1</Menu.Item>
+            <Menu.Item key="2">nav 2</Menu.Item>
+            <Menu.Item key="3">nav 3</Menu.Item>
           </Menu>
-        </Sider>
-        <Layout>
-          <Header style={{ background: '#fff', padding: 0 }}>
-            <Icon
-              className="trigger"
-              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
-            />
-          </Header>
-          <Content
+        </Header>
+        <Content style={{ padding: '0 50px' }}>
+          <div
             style={{
-              margin: '24px 16px',
-              padding: 24,
               background: '#fff',
-              minHeight: 280,
+              padding: 24,
+              minHeight: '60vh',
+              marginTop: '8rem',
             }}
+            className="sample"
           >
             {this.props.children}
-          </Content>
-        </Layout>
+          </div>
+        </Content>
+        <Footer style={{ textAlign: 'center', backgroundColor: '#fff' }}>
+          ReacTV ©2019
+        </Footer>
       </Layout>
     )
   }
