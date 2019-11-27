@@ -31,6 +31,7 @@ class AppLayout extends React.Component {
 
           <Menu
             mode="horizontal"
+            color="primary"
             defaultSelectedKeys={['1']}
             style={{ lineHeight: '61px' }}
           >
