@@ -1,7 +1,8 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
 import PropTypes from 'prop-types'
-import './layout.module.css'
+
+import styles from './layout.module.scss'
 
 const { Header, Content, Footer } = Layout
 
@@ -18,8 +19,9 @@ class AppLayout extends React.Component {
     return (
       <Layout className="layout" style={{ minHeight: '100vh' }}>
         <Header
+          color="primary"
           style={{
-            backgroundColor: '#fff',
+            backgroundColor: '#FFF',
             zIndex: 1,
             position: 'fixed',
             width: '100%',
@@ -48,15 +50,14 @@ class AppLayout extends React.Component {
               minHeight: '60vh',
               marginTop: '8rem',
             }}
-            className="sample"
           >
             {this.props.children}
           </div>
         </Content>
-        <Footer style={{ textAlign: 'center', backgroundColor: '#fff' }}>
+        <Footer className={styles.sample} style={{ textAlign: 'center' }}>
           ReacTV ©2019
         </Footer>
-      </Layout>
+      </Layout >
     )
   }
 }
