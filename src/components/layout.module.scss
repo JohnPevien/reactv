@@ -1,3 +1,10 @@
-.sample {
-  background-color: #745c97 !important;
+.layout-header {
+  h1 > a {
+    color: #fff;
+  }
+}
+
+.layout-footer {
+  text-align: center;
+  color: #fff;
 }
